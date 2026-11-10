@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09131b">
+  <title>Aegis | Predictive Maintenance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Aegis home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-name">aegis<span>.</span></span>
+      </a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <a class="nav-link active" href="#overview"><span class="nav-icon">◈</span> Overview <span class="nav-dot"></span></a>
+      <a class="nav-link" href="#sensors"><span class="nav-icon">⌁</span> Live sensors</a>
+      <a class="nav-link" href="#knowledge"><span class="nav-icon">▤</span> Knowledge base</a>
+      <div class="sidebar-bottom">
+        <div class="connection"><span id="connectionDot" class="status-dot"></span><span id="connectionText">Connecting to engine</span></div>
+        <div class="sidebar-version">PREDICTIVE ENGINE <span>v1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumbs">OPERATIONS <span>/</span> <b>OVERVIEW</b></div>
+        <div class="topbar-right">
+          <div class="utc-clock"><span class="clock-dot"></span><span id="clock">--:--:--</span> LOCAL</div>
+          <div class="avatar">OP</div>
+        </div>
+      </header>
+
+      <section id="overview" class="page-heading">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> INDUSTRIAL INTELLIGENCE</div>
+          <h1>Machine health <span>command center</span></h1>
+          <p>Predict, understand, and prevent equipment failures before they happen.</p>
+        </div>
+        <div class="model-badge"><span class="pulse-dot"></span><span id="engineBadge">AI ENGINE STARTING</span><i></i> AI4I · 6 FAILURE MODES</div>
+      </section>
+
+      <section class="summary-grid" aria-label="System summary">
+        <article class="summary-card">
+          <div class="summary-top"><span class="summary-icon cyan">◉</span><span class="summary-kicker">OVERALL FAILURE RISK</span><span class="card-menu">···</span></div>
+          <div class="summary-value"><span id="riskValue">--</span><span id="riskTag" class="risk-tag">AWAITING INPUT</span></div>
+          <div class="summary-foot"><span class="mini-sparkline" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span id="riskCaption">Run an analysis to assess machine health</span></div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-top"><span class="summary-icon violet">⌘</span><span class="summary-kicker">FAILURE MODES MONITORED</span><span class="card-menu">···</span></div>
+          <div class="summary-value">06<span class="value-unit">targets</span></div>
+          <div class="summary-foot"><span class="foot-indicator violet-dot"></span> Machine failure + five specific modes</div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-top"><span class="summary-icon green">▤</span><span class="summary-kicker">REFERENCE DOCUMENTS</span><span class="card-menu">···</span></div>
+          <div class="summary-value"><span id="documentCount">0</span><span class="value-unit">sources</span></div>
+          <div class="summary-foot"><span class="foot-indicator green-dot"></span><span id="documentCaption">Add manuals for evidence-backed guidance</span></div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-top"><span class="summary-icon amber">✳</span><span class="summary-kicker">LLM DIAGNOSTICS</span><span class="card-menu">···</span></div>
+          <div class="summary-value"><span id="llmStatus">OFFLINE</span></div>
+          <div class="summary-foot"><span id="llmFoot" class="foot-indicator amber-dot"></span><span id="llmCaption">Configure your Groq API key locally</span></div>
+        </article>
+      </section>
+
+      <div class="section-heading">
+        <div><div class="eyebrow">01 / INFERENCE</div><h2>Sensor telemetry</h2></div>
+        <div class="manual-tag"><span class="manual-icon">⌁</span> MANUAL INPUT <span class="tag-separator"></span> REAL SENSOR INTEGRATION READY</div>
+      </div>
+
+      <section class="workspace-grid">
+        <article id="sensors" class="panel sensor-panel">
+          <div class="panel-heading">
+            <div><h3>Machine parameters</h3><p>Enter current operating readings</p></div>
+            <span class="live-pill"><span></span> INPUT READY</span>
+          </div>
+          <form id="sensorForm">
+            <label class="field machine-type-field"><span class="field-label">MACHINE CLASS</span>
+              <select name="machine_type"><option value="L">L · Low</option><option value="M" selected>M · Medium</option><option value="H">H · High</option></select>
+            </label>
+            <div class="sensor-fields">
+              <label class="field"><span class="field-label">AIR TEMPERATURE <small>°K</small></span><span class="input-wrap"><input name="air_temperature_k" type="number" min="250" max="350" step="0.1" value="303.0" required><span class="input-unit">K</span></span><span class="field-range">250 — 350 K</span></label>
+              <label class="field"><span class="field-label">PROCESS TEMPERATURE <small>°K</small></span><span class="input-wrap"><input name="process_temperature_k" type="number" min="250" max="400" step="0.1" value="310.0" required><span class="input-unit">K</span></span><span class="field-range">250 — 400 K</span></label>
+              <label class="field"><span class="field-label">ROTATIONAL SPEED <small>RPM</small></span><span class="input-wrap"><input name="rotational_speed_rpm" type="number" min="0" max="5000" step="1" value="1400" required><span class="input-unit">RPM</span></span><span class="field-range">0 — 5,000 RPM</span></label>
+              <label class="field"><span class="field-label">TORQUE <small>NM</small></span><span class="input-wrap"><input name="torque_nm" type="number" min="0" max="200" step="0.1" value="50.0" required><span class="input-unit">Nm</span></span><span class="field-range">0 — 200 Nm</span></label>
+              <label class="field"><span class="field-label">TOOL WEAR <small>MIN</small></span><span class="input-wrap"><input name="tool_wear_min" type="number" min="0" max="300" step="1" value="220" required><span class="input-unit">min</span></span><span class="field-range">0 — 300 min</span></label>
+            </div>
+            <div class="button-row">
+              <button id="predictButton" class="button button-secondary" type="button"><span class="button-icon">⌁</span> Predict &amp; explain</button>
+              <button id="diagnoseButton" class="button button-primary" type="button"><span class="button-icon">✳</span> Full AI diagnosis <span class="button-arrow">↗</span></button>
+            </div>
+            <div id="formError" class="form-error" role="alert"></div>
+          </form>
+          <div class="privacy-note"><span>◈</span> Predictions run locally. Full AI diagnosis sends readings and retrieved text to Groq.</div>
+        </article>
+
+        <article class="panel risk-panel">
+          <div class="panel-heading">
+            <div><h3>Failure probability</h3><p>Overall machine failure · model output</p></div>
+            <span class="chart-menu">•••</span>
+          </div>
+          <div class="gauge-wrap">
+            <svg class="gauge" viewBox="0 0 220 140" role="img" aria-label="Machine failure probability gauge">
+              <defs><linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#57d6c1"/><stop offset="55%" stop-color="#ffc46a"/><stop offset="100%" stop-color="#ff7786"/></linearGradient></defs>
+              <path class="gauge-track" d="M 28 116 A 82 82 0 0 1 192 116"/>
+              <path id="gaugeProgress" class="gauge-progress" d="M 28 116 A 82 82 0 0 1 192 116"/>
+              <line id="gaugeNeedle" x1="110" y1="116" x2="110" y2="53" class="gauge-needle"/>
+              <circle cx="110" cy="116" r="5" class="gauge-center"/>
+            </svg>
+            <div class="gauge-value"><strong id="gaugeValue">--</strong><span>FAILURE PROBABILITY</span></div>
+            <div class="gauge-label gauge-label-low">LOW</div><div class="gauge-label gauge-label-high">HIGH</div>
+          </div>
+          <div class="threshold-row"><span>Model decision threshold</span><b id="thresholdValue">Run analysis</b></div>
+          <div class="risk-divider"></div>
+          <div class="risk-legend"><span><i class="legend-dot green-dot"></i> Normal</span><span><i class="legend-dot amber-dot"></i> Monitor</span><span><i class="legend-dot red-dot"></i> Elevated</span></div>
+          <div class="risk-disclaimer">Probability is a model estimate, not a confirmed diagnosis.</div>
+        </article>
+      </section>
+
+      <section class="panel modes-panel">
+        <div class="panel-heading">
+          <div><div class="eyebrow">02 / CLASSIFICATION</div><h3>Failure mode assessment</h3><p>Independent binary predictions · validation-selected thresholds</p></div>
+          <span id="modeCount" class="mode-count">NO ANALYSIS YET</span>
+        </div>
+        <div id="failureModes" class="failure-modes">
+          <div class="empty-state"><span class="empty-icon">◈</span><span>Submit sensor readings to see failure mode probabilities.</span></div>
+        </div>
+      </section>
+
+      <section class="panel explanation-panel">
+        <div class="panel-heading">
+          <div><div class="eyebrow">03 / INTERPRETABILITY</div><h3>What influenced this prediction</h3><p>SHAP feature contributions · positive values increase model output</p></div>
+          <span class="shap-badge">SHAP</span>
+        </div>
+        <div id="explanation" class="explanation-body"><div class="empty-state compact">Run an analysis to calculate per-prediction feature contributions.</div></div>
+      </section>
+
+      <section id="knowledge" class="section-heading knowledge-heading">
+        <div><div class="eyebrow">04 / EVIDENCE</div><h2>Maintenance knowledge base</h2></div>
+        <span class="knowledge-hint">LOCAL DOCUMENT RETRIEVAL · DOCUMENTS STAY ON THIS MACHINE</span>
+      </section>
+      <section class="panel knowledge-panel">
+        <div class="knowledge-copy"><span class="knowledge-symbol">▤</span><div><h3>Active maintenance manual</h3><p>Replace the active PDF or DOCX here. The app extracts text, creates overlapping chunks and local embeddings, then replaces the Chroma index with the new manual.</p></div></div>
+        <div class="vector-status"><span class="vector-status-dot"></span><span id="vectorStatus">Preparing local vector index…</span></div>
+        <button id="manualUploadButton" class="upload-button" type="button"><span>↥</span> Replace manual</button>
+        <input id="manualInput" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+        <div id="documentList" class="document-list"><div class="document-empty">The configured project manual is indexed automatically when the server starts.</div></div>
+      </section>
+
+      <section id="diagnosisSection" class="panel diagnosis-panel hidden">
+        <div class="panel-heading"><div><div class="eyebrow">05 / DECISION SUPPORT</div><h3>AI diagnosis &amp; actions</h3><p>Generated from sensor analysis and retrieved maintenance evidence</p></div><span id="faithfulnessBadge" class="faithfulness-badge">NOT VERIFIED</span></div>
+        <div id="diagnosisBody" class="diagnosis-body"></div>
+        <div id="sourcesList" class="sources-list"></div>
+      </section>
+
+      <footer class="footer"><span>AEGIS INDUSTRIAL INTELLIGENCE</span><span>AI4I 2020 · SYNTHETIC DATASET · FOR RESEARCH USE</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
