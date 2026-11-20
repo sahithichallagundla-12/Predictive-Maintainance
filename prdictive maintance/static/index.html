@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c131f">
+  <title>Aegis | Predictive Maintenance System</title>
+  
+  <!-- Modern Inter & JetBrains Mono Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Cache-Busting Version Query Parameter -->
+  <link rel="stylesheet" href="/static/styles.css?v=5.1">
+</head>
+<body>
+  <div class="app-shell" style="display: flex; min-height: 100vh;">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" style="width: 280px; position: fixed; top: 0; bottom: 0; left: 0; z-index: 100; background-color: #0f1826; border-right: 1px solid rgba(255,255,255,0.12); padding: 24px 20px; display: flex; flex-direction: column;">
+      <a class="brand-container" href="#overview" style="display: flex; align-items: center; gap: 14px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; text-decoration: none;">
+        <div class="brand-logo-icon" style="width: 40px; height: 40px; min-width: 40px; min-height: 40px; background: linear-gradient(135deg, #06b6d4, #3b82f6); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 style="font-size: 20px; font-weight: 800; color: #f8fafc; margin: 0; line-height: 1.2;">Aegis</h1>
+          <p style="font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #06b6d4; text-transform: uppercase; margin: 0; letter-spacing: 0.8px; font-weight: 600;">Predictive System</p>
+        </div>
+      </a>
+
+      <div class="nav-section-title" style="font-size: 12px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 12px; padding-left: 10px; font-weight: 600;">Menu</div>
+      
+      <ul class="nav-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+        <li style="list-style: none;">
+          <a class="nav-item-link active" href="#overview" data-view="overview" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; text-decoration: none; border-radius: 10px; font-size: 15px; font-weight: 600;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+              <rect width="7" height="9" x="3" y="3" rx="1"/>
+              <rect width="7" height="5" x="14" y="3" rx="1"/>
+              <rect width="7" height="9" x="14" y="12" rx="1"/>
+              <rect width="7" height="5" x="3" y="16" rx="1"/>
+            </svg>
+            <span>Overview</span>
+          </a>
+        </li>
+        <li style="list-style: none;">
+          <a class="nav-item-link" href="#readings" data-view="readings" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; text-decoration: none; border-radius: 10px; font-size: 15px; font-weight: 500;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+              <path d="M12 20v-6M6 20V10M18 20V4"/>
+            </svg>
+            <span>Machine Readings</span>
+          </a>
+        </li>
+        <li style="list-style: none;">
+          <a class="nav-item-link" href="#knowledge" data-view="knowledge" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; text-decoration: none; border-radius: 10px; font-size: 15px; font-weight: 500;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10M6 10h10M6 14h6"/>
+            </svg>
+            <span>Knowledge Base</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- System Status Footer in Sidebar -->
+      <div class="sidebar-status-card" style="margin-top: auto; padding: 14px 16px; background-color: #142033; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12);">
+        <div class="status-indicator" style="display: flex; align-items: center; gap: 10px;">
+          <span id="connectionDot" class="status-dot"></span>
+          <span id="connectionText" class="status-title" style="font-size: 13px; font-weight: 600; color: #f8fafc;">Checking Engine...</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main main-wrapper" style="margin-left: 280px; flex: 1; min-width: 0; padding: 28px 36px 50px; max-width: 1440px;">
+      
+      <!-- Top Page Header -->
+      <header class="page-header" style="margin-bottom: 24px;">
+        <div class="page-header-text">
+          <h1 style="margin: 0; font-size: 28px;">Aegis – Predictive Maintenance</h1>
+        </div>
+        <div class="header-status-badge">
+          <span id="engineBadgeDot" class="status-dot"></span>
+          <span id="engineBadge">INITIALIZING ENGINE</span>
+        </div>
+      </header>
+
+      <!-- VIEW 1: OVERVIEW DASHBOARD -->
+      <section id="view-overview" class="app-view active">
+        
+        <!-- Summary Cards Grid -->
+        <div class="summary-grid" style="margin-bottom: 24px;">
+          <!-- Summary Card 1: Machine Health -->
+          <article class="summary-card">
+            <div class="summary-card-header">
+              <span class="summary-card-title">Machine Health</span>
+              <div class="summary-card-icon teal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+            </div>
+            <div class="summary-card-value">
+              <span id="summaryRiskVal">--</span>
+            </div>
+            <div>
+              <span id="summaryRiskBadge" class="status-pill neutral">Waiting for input</span>
+            </div>
+          </article>
+
+          <!-- Summary Card 2: Failure Types Checked -->
+          <article class="summary-card">
+            <div class="summary-card-header">
+              <span class="summary-card-title">Failure Types</span>
+              <div class="summary-card-icon blue">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+            </div>
+            <div class="summary-card-value">
+              <span>6</span>
+              <span style="font-size: 15px; color: var(--text-muted); font-weight: 500;">Modes</span>
+            </div>
+            <div>
+              <span class="status-pill normal">Monitored</span>
+            </div>
+          </article>
+
+          <!-- Summary Card 3: Maintenance Documents -->
+          <article class="summary-card">
+            <div class="summary-card-header">
+              <span class="summary-card-title">Documents</span>
+              <div class="summary-card-icon green">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+            </div>
+            <div class="summary-card-value">
+              <span id="summaryDocCount">0</span>
+              <span style="font-size: 15px; color: var(--text-muted); font-weight: 500;">Indexed</span>
+            </div>
+            <div>
+              <span id="summaryDocStatus" class="status-pill neutral">Chroma DB</span>
+            </div>
+          </article>
+
+          <!-- Summary Card 4: AI Assistant -->
+          <article class="summary-card">
+            <div class="summary-card-header">
+              <span class="summary-card-title">AI Assistant</span>
+              <div class="summary-card-icon amber">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+              </div>
+            </div>
+            <div class="summary-card-value">
+              <span id="summaryLlmStatus">Checking</span>
+            </div>
+            <div>
+              <span id="summaryLlmBadge" class="status-pill neutral">Groq LLM</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Machine Readings Card -->
+        <div class="card-panel">
+          <div class="card-panel-header" style="margin-bottom: 18px; padding-bottom: 14px;">
+            <div class="card-panel-header-text">
+              <h2>Enter Machine Readings</h2>
+            </div>
+            <!-- Preset Scenario Bar -->
+            <div class="preset-pills">
+              <span style="font-size: 13px; color: var(--text-muted); font-weight: 500; align-self: center; margin-right: 4px;">Sample Scenarios:</span>
+              <button class="preset-btn active" type="button" data-scenario="normal" title="Load Normal Safe Operation readings">Normal</button>
+              <button class="preset-btn" type="button" data-scenario="hdf" title="Load Heat Dissipation Failure readings">Heat (HDF)</button>
+              <button class="preset-btn" type="button" data-scenario="pwf" title="Load Power Failure readings">Power (PWF)</button>
+              <button class="preset-btn" type="button" data-scenario="osf" title="Load Overstrain Failure readings">Overstrain (OSF)</button>
+              <button class="preset-btn" type="button" data-scenario="twf" title="Load Tool Wear Failure readings">Tool Wear (TWF)</button>
+            </div>
+          </div>
+
+          <!-- Form Fields Grid -->
+          <form id="sensorForm">
+            <div class="form-grid-two-column" style="margin-bottom: 20px;">
+              <!-- Machine Type -->
+              <div class="input-field-group">
+                <label class="input-label" for="machineTypeInput">Machine Quality Class</label>
+                <div class="input-control-wrap">
+                  <select id="machineTypeInput" name="machine_type" class="form-select">
+                    <option value="L">L – Low (High Workload Risk)</option>
+                    <option value="M" selected>M – Medium (Standard)</option>
+                    <option value="H">H – High (Heavy-Duty)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Air Temperature -->
+              <div class="input-field-group">
+                <label class="input-label" for="airTempInput">Air Temperature</label>
+                <div class="input-control-wrap">
+                  <input id="airTempInput" name="air_temperature_k" type="number" min="250" max="350" step="0.1" value="298.5" class="form-input" required>
+                  <span class="input-unit-badge">K</span>
+                </div>
+              </div>
+
+              <!-- Process Temperature -->
+              <div class="input-field-group">
+                <label class="input-label" for="processTempInput">Process Temperature</label>
+                <div class="input-control-wrap">
+                  <input id="processTempInput" name="process_temperature_k" type="number" min="250" max="400" step="0.1" value="308.8" class="form-input" required>
+                  <span class="input-unit-badge">K</span>
+                </div>
+              </div>
+
+              <!-- Rotational Speed -->
+              <div class="input-field-group">
+                <label class="input-label" for="rotSpeedInput">Rotational Speed</label>
+                <div class="input-control-wrap">
+                  <input id="rotSpeedInput" name="rotational_speed_rpm" type="number" min="0" max="5000" step="1" value="1550" class="form-input" required>
+                  <span class="input-unit-badge">RPM</span>
+                </div>
+              </div>
+
+              <!-- Torque -->
+              <div class="input-field-group">
+                <label class="input-label" for="torqueInput">Torque</label>
+                <div class="input-control-wrap">
+                  <input id="torqueInput" name="torque_nm" type="number" min="0" max="200" step="0.1" value="38.0" class="form-input" required>
+                  <span class="input-unit-badge">Nm</span>
+                </div>
+              </div>
+
+              <!-- Tool Wear -->
+              <div class="input-field-group">
+                <label class="input-label" for="toolWearInput">Tool Wear</label>
+                <div class="input-control-wrap">
+                  <input id="toolWearInput" name="tool_wear_min" type="number" min="0" max="300" step="1" value="45" class="form-input" required>
+                  <span class="input-unit-badge">min</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-button-row">
+              <button id="predictButton" class="btn btn-primary" type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>Predict Machine Health</span>
+              </button>
+              <button id="diagnoseButton" class="btn btn-secondary" type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                <span>Get Full AI Diagnosis</span>
+              </button>
+            </div>
+            <div id="formError" style="color: var(--status-alert); font-size: 14px; margin-top: 10px; font-weight: 500;"></div>
+          </form>
+        </div>
+
+        <!-- Machine Health Results Section -->
+        <div id="resultsSection" class="results-container">
+          
+          <!-- Failure Probability Gauge Card -->
+          <div class="risk-gauge-card">
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--text-main); margin-bottom: 12px;">Overall Failure Risk</h3>
+            
+            <div class="gauge-svg-wrapper">
+              <svg class="gauge-svg" viewBox="0 0 220 140">
+                <defs>
+                  <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#10b981"/>
+                    <stop offset="55%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#ef4444"/>
+                  </linearGradient>
+                </defs>
+                <path class="gauge-track-arc" d="M 28 116 A 82 82 0 0 1 192 116"/>
+                <path id="gaugeProgress" class="gauge-fill-arc" d="M 28 116 A 82 82 0 0 1 192 116"/>
+                <line id="gaugeNeedle" x1="110" y1="116" x2="110" y2="53" class="gauge-needle-line"/>
+                <circle cx="110" cy="116" r="6" class="gauge-center-circle"/>
+              </svg>
+            </div>
+
+            <div id="gaugeNumber" class="gauge-display-number">--</div>
+            <div class="gauge-display-label">Probability</div>
+            
+            <div id="riskStatusPill" class="status-pill neutral" style="margin-bottom: 14px;">
+              Awaiting Prediction
+            </div>
+
+            <div class="threshold-info-box" style="margin-bottom: 0;">
+              <span>Decision Cutoff:</span>
+              <strong id="thresholdValue">61%</strong>
+            </div>
+          </div>
+
+          <!-- Failure Type Predictions Card Grid -->
+          <div class="card-panel" style="margin-bottom: 0;">
+            <div class="card-panel-header" style="margin-bottom: 18px; padding-bottom: 12px;">
+              <div class="card-panel-header-text">
+                <h2>Failure Type Predictions</h2>
+              </div>
+              <span id="failureTargetsCountBadge" class="status-pill neutral">6 TARGETS</span>
+            </div>
+
+            <div id="failureModesContainer" class="failure-types-grid">
+              <div class="empty-state-card" style="grid-column: 1 / -1;">
+                Run an analysis or select a test scenario.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHAP Prediction Explanation Card -->
+        <div class="card-panel">
+          <div class="card-panel-header" style="margin-bottom: 18px; padding-bottom: 12px;">
+            <div class="card-panel-header-text">
+              <h2>Why Did the Model Make This Prediction?</h2>
+            </div>
+            <span style="font-size: 13px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+              <span style="color: var(--status-alert); font-weight: bold;">Red (+):</span> Increases Risk &middot; 
+              <span style="color: var(--status-normal); font-weight: bold;">Green (&minus;):</span> Lowers Risk
+            </span>
+          </div>
+
+          <div class="shap-toolbar">
+            <label for="shapTargetSelect">Inspect Failure Mode:</label>
+            <select id="shapTargetSelect" class="shap-select">
+              <option value="Machine failure">Machine failure (Overall)</option>
+              <option value="HDF">Heat dissipation failure (HDF)</option>
+              <option value="PWF">Power failure (PWF)</option>
+              <option value="OSF">Overstrain failure (OSF)</option>
+              <option value="TWF">Tool wear failure (TWF)</option>
+              <option value="RNF">Random failure (RNF)</option>
+            </select>
+          </div>
+
+          <div id="shapContainer">
+            <div class="empty-state-card">
+              Feature explanations will appear here after analysis.
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Assistant Decision Support Panel -->
+        <div id="aiDiagnosisSection" class="diagnosis-panel-wrapper" style="display: none;">
+          <div class="card-panel-header" style="border-bottom-color: rgba(139, 92, 246, 0.2); margin-bottom: 18px; padding-bottom: 12px;">
+            <div class="card-panel-header-text">
+              <h2 style="color: #c4b5fd;">AI Maintenance Assistant</h2>
+            </div>
+            <span id="faithfulnessBadge" class="status-pill normal">VERIFIED EVIDENCE</span>
+          </div>
+
+          <div class="diagnosis-content-grid">
+            <!-- Left: Diagnosis Text -->
+            <div>
+              <h4 style="font-size: 14px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px;">Assessment</h4>
+              <div id="diagnosisBodyText" class="diagnosis-text-box"></div>
+            </div>
+
+            <!-- Right: Recommended Actions -->
+            <div class="actions-checklist-card">
+              <h4>Action Checklist</h4>
+              <div id="actionsListContainer"></div>
+              <div id="evidenceGapsBox" style="margin-top: 14px; font-size: 13px; color: var(--status-caution); display: none;"></div>
+            </div>
+          </div>
+
+          <!-- Faithfulness Summary Line -->
+          <div id="faithfulnessSummaryLine" style="padding: 10px 14px; background-color: rgba(0,0,0,0.3); border-radius: var(--radius-md); font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;"></div>
+
+          <!-- Retrieved Sources -->
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--teal-primary); text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px;">Retrieved Sources (ChromaDB)</h4>
+          <div id="retrievedSourcesGrid" class="retrieved-sources-grid"></div>
+        </div>
+
+      </section>
+
+      <!-- VIEW 2: MACHINE READINGS & TELEMETRY -->
+      <section id="view-readings" class="app-view">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div class="card-panel-header-text">
+              <h2>Machine Readings &amp; Telemetry Status</h2>
+            </div>
+            <span class="status-pill normal">Input: User / Simulation</span>
+          </div>
+
+          <div class="summary-grid" style="margin-bottom: 24px;">
+            <div class="summary-card">
+              <span class="summary-card-title">Air Temperature</span>
+              <div class="summary-card-value"><span id="telemetryAirTemp">298.5</span> <span style="font-size: 16px; color: var(--teal-primary);">K</span></div>
+            </div>
+            <div class="summary-card">
+              <span class="summary-card-title">Process Temperature</span>
+              <div class="summary-card-value"><span id="telemetryProcTemp">308.8</span> <span style="font-size: 16px; color: var(--teal-primary);">K</span></div>
+            </div>
+            <div class="summary-card">
+              <span class="summary-card-title">Rotational Speed</span>
+              <div class="summary-card-value"><span id="telemetrySpeed">1550</span> <span style="font-size: 16px; color: var(--teal-primary);">RPM</span></div>
+            </div>
+            <div class="summary-card">
+              <span class="summary-card-title">Operating Torque</span>
+              <div class="summary-card-value"><span id="telemetryTorque">38.0</span> <span style="font-size: 16px; color: var(--teal-primary);">Nm</span></div>
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <a href="#overview" class="btn btn-primary" style="display: inline-flex;">
+              Return to Overview &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 3: MAINTENANCE KNOWLEDGE BASE -->
+      <section id="view-knowledge" class="app-view">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div class="card-panel-header-text">
+              <h2>Maintenance Knowledge Base</h2>
+            </div>
+            <span id="vectorStatusBadge" class="status-pill normal">Chroma DB Active</span>
+          </div>
+
+          <div class="knowledge-layout-grid">
+            <!-- Active Manual Card -->
+            <div class="active-document-card">
+              <h3 style="font-size: 17px; font-weight: 700; color: var(--text-main); margin-bottom: 14px;">Active Manual</h3>
+              <div id="documentChipsContainer" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px;"></div>
+
+              <div style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Model:</span>
+                  <strong style="color: var(--text-main); font-family: 'JetBrains Mono', monospace;">all-MiniLM-L6-v2</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Indexed Chunks:</span>
+                  <strong id="knowledgeChunkCount" style="color: var(--teal-primary); font-family: 'JetBrains Mono', monospace;">26 sections</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upload & Replace Card -->
+            <div class="active-document-card">
+              <h3 style="font-size: 17px; font-weight: 700; color: var(--text-main); margin-bottom: 14px;">Upload Document</h3>
+
+              <div id="manualDropzone" class="upload-dropzone" style="padding: 24px 16px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 36px; height: 36px; margin-bottom: 10px;">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <h3 style="font-size: 16px; margin-bottom: 12px;">Choose PDF or DOCX (up to 20 MB)</h3>
+                <button id="manualUploadButton" class="btn btn-primary" type="button" style="height: 38px; font-size: 13px; padding: 0 18px;">
+                  Browse File
+                </button>
+                <input id="manualInput" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clean Minimal Footer -->
+      <footer style="margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-muted);">
+        <span>Aegis Predictive Maintenance &middot; AI4I 2020 Benchmark</span>
+        <span>FastAPI &middot; ChromaDB &middot; SHAP &middot; Groq</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification Alert -->
+  <div id="toast" class="toast-alert" role="status">
+    <span id="toastIcon"></span>
+    <span id="toastMessage">Notification message</span>
+  </div>
+
+  <!-- Client Application Script with Cache-Buster -->
+  <script src="/static/app.js?v=5.1"></script>
+</body>
+</html>

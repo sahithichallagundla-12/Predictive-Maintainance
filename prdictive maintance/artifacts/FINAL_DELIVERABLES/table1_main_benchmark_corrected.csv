@@ -1,0 +1,55 @@
+Target,Pipeline / Method,Model Name,Feature Set,n_seeds,F1 Score (mean +/- std),Recall (mean +/- std),Precision (mean +/- std),PR-AUC (mean +/- std),ROC-AUC (mean +/- std),Accuracy (mean +/- std)
+Machine failure,Aegis (Validation-Selected Pipeline),Dynamic (HGB: n=2, RF: n=3),Engineered (Aegis),5,0.836 +/- 0.052,0.784 +/- 0.088,0.903 +/- 0.028,0.880 +/- 0.033,0.987 +/- 0.002,0.990 +/- 0.003
+Machine failure,Aegis Candidate Subset,RandomForest (winning seeds),Engineered (Aegis),3,0.862 +/- 0.011,0.817 +/- 0.011,0.913 +/- 0.020,0.862 +/- 0.035,0.981 +/- 0.005,0.991 +/- 0.001
+Machine failure,Aegis Candidate Subset,HistGradientBoosting (winning seeds),Engineered (Aegis),2,0.798 +/- 0.076,0.735 +/- 0.153,0.887 +/- 0.038,0.880 +/- 0.037,0.987 +/- 0.003,0.988 +/- 0.003
+Machine failure,Baseline (B1 Matzka 2020),Bagged Trees,Raw Sensors,5,0.734 +/- 0.034,0.635 +/- 0.043,0.871 +/- 0.022,0.784 +/- 0.057,0.961 +/- 0.007,0.984 +/- 0.002
+Machine failure,Baseline (B2 Tuama / B3 Waghulde),XGBoost,Raw Sensors,5,0.718 +/- 0.040,0.612 +/- 0.054,0.873 +/- 0.035,0.786 +/- 0.031,0.977 +/- 0.006,0.984 +/- 0.002
+Machine failure,Baseline (B2 Tuama / B3 Waghulde),Random Forest,Raw Sensors,5,0.645 +/- 0.030,0.533 +/- 0.054,0.823 +/- 0.040,0.732 +/- 0.030,0.973 +/- 0.007,0.980 +/- 0.001
+Machine failure,Baseline (B3 Waghulde 2025),SVM (RBF),Raw Sensors,5,0.425 +/- 0.022,0.886 +/- 0.054,0.279 +/- 0.016,0.642 +/- 0.011,0.965 +/- 0.009,0.918 +/- 0.005
+Machine failure,Baseline (B3 Waghulde 2025),DNN 64-32,Raw Sensors,5,0.336 +/- 0.237,0.251 +/- 0.223,0.807 +/- 0.111,0.493 +/- 0.132,0.908 +/- 0.061,0.972 +/- 0.005
+Machine failure,Baseline (Reference Floor),Logistic Regression,Raw Sensors,5,0.238 +/- 0.012,0.827 +/- 0.064,0.139 +/- 0.007,0.432 +/- 0.063,0.908 +/- 0.023,0.821 +/- 0.005
+HDF,Aegis (Validation-Selected Pipeline),Dynamic (HGB: n=1, LGBM: n=4),Engineered (Aegis),5,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000
+HDF,Aegis Candidate Subset,LightGBM (winning seeds),Engineered (Aegis),4,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000
+HDF,Aegis Candidate Subset,HistGradientBoosting (winning seeds),Engineered (Aegis),1,1.000 +/- nan,1.000 +/- nan,1.000 +/- nan,1.000 +/- nan,1.000 +/- nan,1.000 +/- nan
+HDF,Baseline (B2 Tuama / B3 Waghulde),XGBoost,Raw Sensors,5,0.936 +/- 0.072,0.916 +/- 0.079,0.960 +/- 0.089,0.962 +/- 0.056,1.000 +/- 0.001,0.999 +/- 0.001
+HDF,Baseline (B1 Matzka 2020),Bagged Trees,Raw Sensors,5,0.912 +/- 0.072,0.905 +/- 0.096,0.924 +/- 0.084,0.918 +/- 0.112,0.988 +/- 0.025,0.998 +/- 0.001
+HDF,Baseline (B2 Tuama / B3 Waghulde),Random Forest,Raw Sensors,5,0.767 +/- 0.161,0.715 +/- 0.195,0.849 +/- 0.110,0.823 +/- 0.139,0.998 +/- 0.002,0.996 +/- 0.003
+HDF,Baseline (B3 Waghulde 2025),SVM (RBF),Raw Sensors,5,0.490 +/- 0.070,0.946 +/- 0.063,0.331 +/- 0.056,0.723 +/- 0.060,0.995 +/- 0.002,0.979 +/- 0.003
+HDF,Baseline (Reference Floor),Logistic Regression,Raw Sensors,5,0.414 +/- 0.051,1.000 +/- 0.000,0.262 +/- 0.040,0.723 +/- 0.046,0.995 +/- 0.001,0.970 +/- 0.004
+HDF,Baseline (B3 Waghulde 2025),DNN 64-32,Raw Sensors,5,0.158 +/- 0.353,0.167 +/- 0.373,0.150 +/- 0.335,0.166 +/- 0.347,0.547 +/- 0.299,0.991 +/- 0.003
+PWF,Aegis (Validation-Selected Pipeline),RandomForest (selected across all seeds),Engineered (Aegis),5,0.960 +/- 0.051,1.000 +/- 0.000,0.927 +/- 0.091,0.994 +/- 0.011,1.000 +/- 0.000,0.999 +/- 0.001
+PWF,Baseline (B1 Matzka 2020),Bagged Trees,Raw Sensors,5,0.775 +/- 0.088,0.728 +/- 0.096,0.837 +/- 0.114,0.859 +/- 0.082,0.969 +/- 0.018,0.996 +/- 0.001
+PWF,Baseline (B2 Tuama / B3 Waghulde),XGBoost,Raw Sensors,5,0.713 +/- 0.034,0.686 +/- 0.031,0.744 +/- 0.050,0.785 +/- 0.060,0.994 +/- 0.007,0.995 +/- 0.001
+PWF,Baseline (B2 Tuama / B3 Waghulde),Random Forest,Raw Sensors,5,0.685 +/- 0.137,0.589 +/- 0.173,0.844 +/- 0.059,0.773 +/- 0.093,0.987 +/- 0.021,0.995 +/- 0.002
+PWF,Baseline (B3 Waghulde 2025),SVM (RBF),Raw Sensors,5,0.667 +/- 0.079,0.912 +/- 0.059,0.531 +/- 0.090,0.841 +/- 0.071,0.993 +/- 0.009,0.992 +/- 0.003
+PWF,Baseline (Reference Floor),Logistic Regression,Raw Sensors,5,0.541 +/- 0.086,0.969 +/- 0.043,0.379 +/- 0.079,0.741 +/- 0.146,0.995 +/- 0.004,0.985 +/- 0.006
+PWF,Baseline (B3 Waghulde 2025),DNN 64-32,Raw Sensors,5,0.382 +/- 0.357,0.305 +/- 0.293,0.518 +/- 0.474,0.499 +/- 0.452,0.662 +/- 0.464,0.993 +/- 0.003
+OSF,Aegis (Validation-Selected Pipeline),Dynamic (LGBM: n=2, HGB: n=1, RF: n=2),Engineered (Aegis),5,0.961 +/- 0.033,0.983 +/- 0.037,0.941 +/- 0.044,0.997 +/- 0.005,1.000 +/- 0.000,0.999 +/- 0.001
+OSF,Aegis Candidate Subset,RandomForest (winning seeds),Engineered (Aegis),2,0.988 +/- 0.016,1.000 +/- 0.000,0.977 +/- 0.032,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000
+OSF,Aegis Candidate Subset,HistGradientBoosting (winning seeds),Engineered (Aegis),1,0.974 +/- nan,1.000 +/- nan,0.950 +/- nan,0.997 +/- nan,1.000 +/- nan,0.999 +/- nan
+OSF,Aegis Candidate Subset,LightGBM (winning seeds),Engineered (Aegis),2,0.927 +/- 0.015,0.958 +/- 0.059,0.900 +/- 0.024,0.994 +/- 0.008,1.000 +/- 0.000,0.999 +/- 0.000
+OSF,Baseline (B2 Tuama / B3 Waghulde),XGBoost,Raw Sensors,5,0.872 +/- 0.118,0.827 +/- 0.180,0.942 +/- 0.036,0.979 +/- 0.022,1.000 +/- 0.000,0.997 +/- 0.002
+OSF,Baseline (B1 Matzka 2020),Bagged Trees,Raw Sensors,5,0.819 +/- 0.113,0.739 +/- 0.193,0.958 +/- 0.039,0.966 +/- 0.013,1.000 +/- 0.000,0.996 +/- 0.002
+OSF,Baseline (B3 Waghulde 2025),DNN 64-32,Raw Sensors,5,0.766 +/- 0.130,0.648 +/- 0.191,0.983 +/- 0.037,0.920 +/- 0.096,0.998 +/- 0.003,0.996 +/- 0.002
+OSF,Baseline (B3 Waghulde 2025),SVM (RBF),Raw Sensors,5,0.760 +/- 0.052,1.000 +/- 0.000,0.616 +/- 0.067,0.976 +/- 0.017,1.000 +/- 0.000,0.993 +/- 0.002
+OSF,Baseline (B2 Tuama / B3 Waghulde),Random Forest,Raw Sensors,5,0.732 +/- 0.046,0.624 +/- 0.079,0.901 +/- 0.096,0.897 +/- 0.047,0.998 +/- 0.000,0.995 +/- 0.001
+OSF,Baseline (Reference Floor),Logistic Regression,Raw Sensors,5,0.667 +/- 0.075,1.000 +/- 0.000,0.505 +/- 0.088,0.984 +/- 0.017,1.000 +/- 0.000,0.989 +/- 0.004
+TWF,Aegis (Validation-Selected Pipeline),Dynamic (CatB: n=3, HGB: n=1, XGB: n=1),Engineered (Aegis),5,0.021 +/- 0.047,0.080 +/- 0.179,0.012 +/- 0.027,0.058 +/- 0.017,0.954 +/- 0.008,0.984 +/- 0.008
+TWF,Aegis Candidate Subset,XGBoost (winning seeds),Engineered (Aegis),1,0.105 +/- nan,0.400 +/- nan,0.061 +/- nan,0.079 +/- nan,0.966 +/- nan,0.977 +/- nan
+TWF,Aegis Candidate Subset,HistGradientBoosting (winning seeds),Engineered (Aegis),1,0.000 +/- nan,0.000 +/- nan,0.000 +/- nan,0.083 +/- nan,0.972 +/- nan,0.993 +/- nan
+TWF,Aegis Candidate Subset,CatBoost (winning seeds),Engineered (Aegis),3,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.053 +/- 0.008,0.951 +/- 0.006,0.983 +/- 0.009
+TWF,Baseline (B3 Waghulde 2025),SVM (RBF),Raw Sensors,5,0.092 +/- 0.027,0.567 +/- 0.143,0.050 +/- 0.015,0.076 +/- 0.031,0.941 +/- 0.014,0.951 +/- 0.005
+TWF,Baseline (Reference Floor),Logistic Regression,Raw Sensors,5,0.085 +/- 0.013,0.975 +/- 0.056,0.045 +/- 0.007,0.116 +/- 0.038,0.959 +/- 0.009,0.908 +/- 0.005
+TWF,Baseline (B1 Matzka 2020),Bagged Trees,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.079 +/- 0.025,0.867 +/- 0.032,0.996 +/- 0.001
+TWF,Baseline (B2 Tuama / B3 Waghulde),XGBoost,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.073 +/- 0.031,0.951 +/- 0.029,0.995 +/- 0.001
+TWF,Baseline (B2 Tuama / B3 Waghulde),Random Forest,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.064 +/- 0.016,0.954 +/- 0.016,0.996 +/- 0.001
+TWF,Baseline (B3 Waghulde 2025),DNN 64-32,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.005 +/- 0.005,0.359 +/- 0.292,0.996 +/- 0.001
+RNF,Aegis (Validation-Selected Pipeline),Dynamic (ET: n=3, RF: n=2),Engineered (Aegis),5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.013 +/- 0.013,0.467 +/- 0.227,0.992 +/- 0.006
+RNF,Aegis Candidate Subset,ExtraTrees (winning seeds),Engineered (Aegis),3,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.013 +/- 0.018,0.467 +/- 0.374,0.996 +/- 0.002
+RNF,Aegis Candidate Subset,RandomForest (winning seeds),Engineered (Aegis),2,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.008 +/- 0.006,0.502 +/- 0.017,0.986 +/- 0.006
+RNF,Baseline (Reference Floor),Logistic Regression,Raw Sensors,5,0.004 +/- 0.003,0.280 +/- 0.189,0.002 +/- 0.002,0.006 +/- 0.005,0.453 +/- 0.269,0.678 +/- 0.040
+RNF,Baseline (B3 Waghulde 2025),SVM (RBF),Raw Sensors,5,0.003 +/- 0.006,0.050 +/- 0.112,0.001 +/- 0.003,0.003 +/- 0.002,0.297 +/- 0.133,0.933 +/- 0.018
+RNF,Baseline (B1 Matzka 2020),Bagged Trees,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.009 +/- 0.009,0.569 +/- 0.106,0.998 +/- 0.001
+RNF,Baseline (B2 Tuama / B3 Waghulde),XGBoost,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.019 +/- 0.015,0.460 +/- 0.265,0.998 +/- 0.001
+RNF,Baseline (B2 Tuama / B3 Waghulde),Random Forest,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.012 +/- 0.017,0.508 +/- 0.139,0.998 +/- 0.001
+RNF,Baseline (B3 Waghulde 2025),DNN 64-32,Raw Sensors,5,0.000 +/- 0.000,0.000 +/- 0.000,0.000 +/- 0.000,0.004 +/- 0.002,0.523 +/- 0.184,0.998 +/- 0.001

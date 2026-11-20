@@ -1,0 +1,12 @@
+{
+  "n_permutations": 199,
+  "real_roc_auc": 0.7229639519359146,
+  "real_pr_auc": 0.017333333333333333,
+  "permuted_roc_auc_mean": 0.5041253684187417,
+  "permuted_roc_auc_std": 0.10406434615909887,
+  "permuted_pr_auc_mean": 0.006457392372688204,
+  "permuted_pr_auc_std": 0.0301570467629218,
+  "p_value_roc_auc": 0.045,
+  "p_value_pr_auc": 0.04,
+  "conclusion": "Real model is statistically indistinguishable from random noise (p > 0.05)."
+}

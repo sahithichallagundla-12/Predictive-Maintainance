@@ -1,0 +1,5 @@
+evaluation_mode,model,tuning_objective,decision_threshold,val_target_recall,test_recall,test_precision,test_f1,test_f2,mean_alerts_per_1500_tests,mean_tp_caught,alert_burden_alerts_per_tp
+Standard Classification,Aegis TWF (Validation-Selected Pipeline),argmax F1(val),0.350 +/- 0.187,Unconstrained (~28%),0.080 +/- 0.179,0.012 +/- 0.027,0.021 +/- 0.047,0.038 +/- 0.084,18.4 +/- 14.3,0.4 +/- 0.89,16.5 (based on 1 non-zero seed)
+Recall-Constrained Screening Filter,Aegis TWF (Screening Filter),argmax Prec(val) s.t. Recall(val) >= 0.80,0.008 +/- 0.007,>= 80.0% (mean 85.7%),0.712 +/- 0.164,0.057 +/- 0.024,0.104 +/- 0.041,0.210 +/- 0.072,87.8 +/- 27.0,4.6 +/- 0.89,19.6 +/- 6.0
+Recall-Constrained Screening Filter,Logistic Regression (Baseline Floor),argmax Prec(val) s.t. Recall(val) >= 0.80,0.783 +/- 0.150,>= 80.0%,0.656 +/- 0.289,0.056 +/- 0.017,0.100 +/- 0.027,0.194 +/- 0.048,80.8 +/- 38.5,4.2 +/- 1.79,19.5 +/- 7.5
+Recall-Constrained Screening Filter,SVM RBF (Baseline 3),argmax Prec(val) s.t. Recall(val) >= 0.80,0.021 +/- 0.019,>= 80.0%,0.699 +/- 0.273,0.044 +/- 0.019,0.079 +/- 0.031,0.160 +/- 0.049,124.4 +/- 68.7,4.6 +/- 1.95,26.9 +/- 11.7

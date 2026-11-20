@@ -1,0 +1,50 @@
+Target,Method / Model,F1 Score,Recall,PR-AUC,ROC-AUC
+Machine failure,HistGradientBoosting (Aegis (ours)),0.798 +/- 0.076,0.735 +/- 0.153,0.880 +/- 0.037,0.987 +/- 0.003
+Machine failure,RandomForest (Aegis (ours)),0.862 +/- 0.011,0.817 +/- 0.011,0.862 +/- 0.035,0.981 +/- 0.005
+Machine failure,Bagged Trees (Baseline (B1 Matzka 2020)),0.734 +/- 0.034,0.635 +/- 0.043,0.784 +/- 0.057,0.961 +/- 0.007
+Machine failure,Random Forest (Baseline (B2 Tuama / B3 Waghulde)),0.645 +/- 0.030,0.533 +/- 0.054,0.732 +/- 0.030,0.973 +/- 0.007
+Machine failure,XGBoost (Baseline (B2 Tuama / B3 Waghulde)),0.718 +/- 0.040,0.612 +/- 0.054,0.786 +/- 0.031,0.977 +/- 0.006
+Machine failure,DNN 64-32 (Baseline (B3 Waghulde 2025)),0.336 +/- 0.237,0.251 +/- 0.223,0.493 +/- 0.132,0.908 +/- 0.061
+Machine failure,SVM (RBF) (Baseline (B3 Waghulde 2025)),0.425 +/- 0.022,0.886 +/- 0.054,0.642 +/- 0.011,0.965 +/- 0.009
+Machine failure,Logistic Regression (Baseline (Reference Floor)),0.238 +/- 0.012,0.827 +/- 0.064,0.432 +/- 0.063,0.908 +/- 0.023
+TWF,CatBoost (Aegis (ours)),0.000 +/- 0.000,0.000 +/- 0.000,0.053 +/- 0.008,0.951 +/- 0.006
+TWF,HistGradientBoosting (Aegis (ours)),0.000 +/- nan,0.000 +/- nan,0.083 +/- nan,0.972 +/- nan
+TWF,XGBoost (Aegis (ours)),0.105 +/- nan,0.400 +/- nan,0.079 +/- nan,0.966 +/- nan
+TWF,Bagged Trees (Baseline (B1 Matzka 2020)),0.000 +/- 0.000,0.000 +/- 0.000,0.079 +/- 0.025,0.867 +/- 0.032
+TWF,Random Forest (Baseline (B2 Tuama / B3 Waghulde)),0.000 +/- 0.000,0.000 +/- 0.000,0.064 +/- 0.016,0.954 +/- 0.016
+TWF,XGBoost (Baseline (B2 Tuama / B3 Waghulde)),0.000 +/- 0.000,0.000 +/- 0.000,0.073 +/- 0.031,0.951 +/- 0.029
+TWF,DNN 64-32 (Baseline (B3 Waghulde 2025)),0.000 +/- 0.000,0.000 +/- 0.000,0.005 +/- 0.005,0.359 +/- 0.292
+TWF,SVM (RBF) (Baseline (B3 Waghulde 2025)),0.092 +/- 0.027,0.567 +/- 0.143,0.076 +/- 0.031,0.941 +/- 0.014
+TWF,Logistic Regression (Baseline (Reference Floor)),0.085 +/- 0.013,0.975 +/- 0.056,0.116 +/- 0.038,0.959 +/- 0.009
+HDF,HistGradientBoosting (Aegis (ours)),1.000 +/- nan,1.000 +/- nan,1.000 +/- nan,1.000 +/- nan
+HDF,LightGBM (Aegis (ours)),1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000
+HDF,Bagged Trees (Baseline (B1 Matzka 2020)),0.912 +/- 0.072,0.905 +/- 0.096,0.918 +/- 0.112,0.988 +/- 0.025
+HDF,Random Forest (Baseline (B2 Tuama / B3 Waghulde)),0.767 +/- 0.161,0.715 +/- 0.195,0.823 +/- 0.139,0.998 +/- 0.002
+HDF,XGBoost (Baseline (B2 Tuama / B3 Waghulde)),0.936 +/- 0.072,0.916 +/- 0.079,0.962 +/- 0.056,1.000 +/- 0.001
+HDF,DNN 64-32 (Baseline (B3 Waghulde 2025)),0.158 +/- 0.353,0.167 +/- 0.373,0.166 +/- 0.347,0.547 +/- 0.299
+HDF,SVM (RBF) (Baseline (B3 Waghulde 2025)),0.490 +/- 0.070,0.946 +/- 0.063,0.723 +/- 0.060,0.995 +/- 0.002
+HDF,Logistic Regression (Baseline (Reference Floor)),0.414 +/- 0.051,1.000 +/- 0.000,0.723 +/- 0.046,0.995 +/- 0.001
+PWF,RandomForest (Aegis (ours)),0.960 +/- 0.051,1.000 +/- 0.000,0.994 +/- 0.011,1.000 +/- 0.000
+PWF,Bagged Trees (Baseline (B1 Matzka 2020)),0.775 +/- 0.088,0.728 +/- 0.096,0.859 +/- 0.082,0.969 +/- 0.018
+PWF,Random Forest (Baseline (B2 Tuama / B3 Waghulde)),0.685 +/- 0.137,0.589 +/- 0.173,0.773 +/- 0.093,0.987 +/- 0.021
+PWF,XGBoost (Baseline (B2 Tuama / B3 Waghulde)),0.713 +/- 0.034,0.686 +/- 0.031,0.785 +/- 0.060,0.994 +/- 0.007
+PWF,DNN 64-32 (Baseline (B3 Waghulde 2025)),0.382 +/- 0.357,0.305 +/- 0.293,0.499 +/- 0.452,0.662 +/- 0.464
+PWF,SVM (RBF) (Baseline (B3 Waghulde 2025)),0.667 +/- 0.079,0.912 +/- 0.059,0.841 +/- 0.071,0.993 +/- 0.009
+PWF,Logistic Regression (Baseline (Reference Floor)),0.541 +/- 0.086,0.969 +/- 0.043,0.741 +/- 0.146,0.995 +/- 0.004
+OSF,HistGradientBoosting (Aegis (ours)),0.974 +/- nan,1.000 +/- nan,0.997 +/- nan,1.000 +/- nan
+OSF,LightGBM (Aegis (ours)),0.927 +/- 0.015,0.958 +/- 0.059,0.994 +/- 0.008,1.000 +/- 0.000
+OSF,RandomForest (Aegis (ours)),0.988 +/- 0.016,1.000 +/- 0.000,1.000 +/- 0.000,1.000 +/- 0.000
+OSF,Bagged Trees (Baseline (B1 Matzka 2020)),0.819 +/- 0.113,0.739 +/- 0.193,0.966 +/- 0.013,1.000 +/- 0.000
+OSF,Random Forest (Baseline (B2 Tuama / B3 Waghulde)),0.732 +/- 0.046,0.624 +/- 0.079,0.897 +/- 0.047,0.998 +/- 0.000
+OSF,XGBoost (Baseline (B2 Tuama / B3 Waghulde)),0.872 +/- 0.118,0.827 +/- 0.180,0.979 +/- 0.022,1.000 +/- 0.000
+OSF,DNN 64-32 (Baseline (B3 Waghulde 2025)),0.766 +/- 0.130,0.648 +/- 0.191,0.920 +/- 0.096,0.998 +/- 0.003
+OSF,SVM (RBF) (Baseline (B3 Waghulde 2025)),0.760 +/- 0.052,1.000 +/- 0.000,0.976 +/- 0.017,1.000 +/- 0.000
+OSF,Logistic Regression (Baseline (Reference Floor)),0.667 +/- 0.075,1.000 +/- 0.000,0.984 +/- 0.017,1.000 +/- 0.000
+RNF,ExtraTrees (Aegis (ours)),0.000 +/- 0.000,0.000 +/- 0.000,0.013 +/- 0.018,0.467 +/- 0.374
+RNF,RandomForest (Aegis (ours)),0.000 +/- 0.000,0.000 +/- 0.000,0.008 +/- 0.006,0.502 +/- 0.017
+RNF,Bagged Trees (Baseline (B1 Matzka 2020)),0.000 +/- 0.000,0.000 +/- 0.000,0.009 +/- 0.009,0.569 +/- 0.106
+RNF,Random Forest (Baseline (B2 Tuama / B3 Waghulde)),0.000 +/- 0.000,0.000 +/- 0.000,0.012 +/- 0.017,0.508 +/- 0.139
+RNF,XGBoost (Baseline (B2 Tuama / B3 Waghulde)),0.000 +/- 0.000,0.000 +/- 0.000,0.019 +/- 0.015,0.460 +/- 0.265
+RNF,DNN 64-32 (Baseline (B3 Waghulde 2025)),0.000 +/- 0.000,0.000 +/- 0.000,0.004 +/- 0.002,0.523 +/- 0.184
+RNF,SVM (RBF) (Baseline (B3 Waghulde 2025)),0.003 +/- 0.006,0.050 +/- 0.112,0.003 +/- 0.002,0.297 +/- 0.133
+RNF,Logistic Regression (Baseline (Reference Floor)),0.004 +/- 0.003,0.280 +/- 0.189,0.006 +/- 0.005,0.453 +/- 0.269

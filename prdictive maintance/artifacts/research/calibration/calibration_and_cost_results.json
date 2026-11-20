@@ -1,0 +1,9 @@
+{
+  "cost_ratio": "FN:FP = 10:1",
+  "optimal_cost_threshold": 0.1782828282828283,
+  "test_f1_cost_threshold": 0.8686868686868687,
+  "test_recall_cost_threshold": 0.8431372549019608,
+  "test_precision_cost_threshold": 0.8958333333333334,
+  "brier_score_test": 0.007342271320158751,
+  "brier_score_val": 0.00829055411628412
+}

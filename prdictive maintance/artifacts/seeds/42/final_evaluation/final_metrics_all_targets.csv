@@ -1,0 +1,7 @@
+target,model,feature_proc,threshold,accuracy,precision,recall,f1,roc_auc,pr_auc,specificity,tn,fp,fn,tp
+Machine failure,HistGradientBoosting,tree,0.65,0.99,0.86,0.843137,0.851485,0.989093,0.906678,0.995169,1442,7,8,43
+TWF,CatBoost,tree,0.45,0.985333,0.0,0.0,0.0,0.946213,0.051709,0.990617,1478,14,8,0
+HDF,HistGradientBoosting,tree,0.05,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1482,0,0,18
+PWF,RandomForest,tree,0.3,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1487,0,0,13
+OSF,LightGBM,tree,0.05,0.998667,0.882353,1.0,0.9375,1.0,1.0,0.998653,1483,2,0,15
+RNF,ExtraTrees,tree,0.25,0.997333,0.0,0.0,0.0,0.834446,0.03332,0.998665,1496,2,2,0

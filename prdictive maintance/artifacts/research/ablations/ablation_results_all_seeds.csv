@@ -1,0 +1,151 @@
+seed,condition,target,test_f1
+42,Full Aegis,Machine failure,0.8514851485148515
+42,No Engineered Features,Machine failure,0.7524752475247525
+42,Fixed Threshold (0.50),Machine failure,0.8431372549019608
+42,No Class Balancing,Machine failure,0.9148936170212766
+42,Fixed Model (XGBoost),Machine failure,0.8627450980392157
+42,Full Aegis,TWF,0.0
+42,No Engineered Features,TWF,0.11764705882352941
+42,Fixed Threshold (0.50),TWF,0.0
+42,No Class Balancing,TWF,0.05405405405405406
+42,Fixed Model (XGBoost),TWF,0.0
+42,Full Aegis,HDF,1.0
+42,No Engineered Features,HDF,0.9090909090909091
+42,Fixed Threshold (0.50),HDF,1.0
+42,No Class Balancing,HDF,0.9714285714285714
+42,Fixed Model (XGBoost),HDF,0.9714285714285714
+42,Full Aegis,PWF,1.0
+42,No Engineered Features,PWF,0.72
+42,Fixed Threshold (0.50),PWF,0.96
+42,No Class Balancing,PWF,1.0
+42,Fixed Model (XGBoost),PWF,0.9285714285714286
+42,Full Aegis,OSF,0.9375
+42,No Engineered Features,OSF,0.967741935483871
+42,Fixed Threshold (0.50),OSF,0.9375
+42,No Class Balancing,OSF,1.0
+42,Fixed Model (XGBoost),OSF,0.8823529411764706
+42,Full Aegis,RNF,0.0
+42,No Engineered Features,RNF,0.0
+42,Fixed Threshold (0.50),RNF,0.0
+42,No Class Balancing,RNF,0.0
+42,Fixed Model (XGBoost),RNF,0.0
+7,Full Aegis,Machine failure,0.7441860465116279
+7,No Engineered Features,Machine failure,0.6987951807228916
+7,Fixed Threshold (0.50),Machine failure,0.7920792079207921
+7,No Class Balancing,Machine failure,0.8514851485148515
+7,Fixed Model (XGBoost),Machine failure,0.8
+7,Full Aegis,TWF,0.0
+7,No Engineered Features,TWF,0.0
+7,Fixed Threshold (0.50),TWF,0.0
+7,No Class Balancing,TWF,0.10526315789473684
+7,Fixed Model (XGBoost),TWF,0.0
+7,Full Aegis,HDF,1.0
+7,No Engineered Features,HDF,0.9696969696969697
+7,Fixed Threshold (0.50),HDF,1.0
+7,No Class Balancing,HDF,1.0
+7,Fixed Model (XGBoost),HDF,0.9696969696969697
+7,Full Aegis,PWF,0.875
+7,No Engineered Features,PWF,0.7272727272727273
+7,Fixed Threshold (0.50),PWF,0.896551724137931
+7,No Class Balancing,PWF,0.8666666666666667
+7,Fixed Model (XGBoost),PWF,0.7777777777777778
+7,Full Aegis,OSF,0.9743589743589743
+7,No Engineered Features,OSF,0.7878787878787878
+7,Fixed Threshold (0.50),OSF,0.9743589743589743
+7,No Class Balancing,OSF,0.8888888888888888
+7,Fixed Model (XGBoost),OSF,0.9743589743589743
+7,Full Aegis,RNF,0.0
+7,No Engineered Features,RNF,0.0
+7,Fixed Threshold (0.50),RNF,0.0
+7,No Class Balancing,RNF,0.0
+7,Fixed Model (XGBoost),RNF,0.0
+21,Full Aegis,Machine failure,0.875
+21,No Engineered Features,Machine failure,0.6966292134831461
+21,Fixed Threshold (0.50),Machine failure,0.8631578947368421
+21,No Class Balancing,Machine failure,0.8571428571428571
+21,Fixed Model (XGBoost),Machine failure,0.8421052631578947
+21,Full Aegis,TWF,0.0
+21,No Engineered Features,TWF,0.0
+21,Fixed Threshold (0.50),TWF,0.0
+21,No Class Balancing,TWF,0.0
+21,Fixed Model (XGBoost),TWF,0.0
+21,Full Aegis,HDF,1.0
+21,No Engineered Features,HDF,0.972972972972973
+21,Fixed Threshold (0.50),HDF,1.0
+21,No Class Balancing,HDF,0.972972972972973
+21,Fixed Model (XGBoost),HDF,0.9473684210526315
+21,Full Aegis,PWF,1.0
+21,No Engineered Features,PWF,0.5625
+21,Fixed Threshold (0.50),PWF,1.0
+21,No Class Balancing,PWF,1.0
+21,Fixed Model (XGBoost),PWF,0.9032258064516129
+21,Full Aegis,OSF,0.9166666666666666
+21,No Engineered Features,OSF,0.88
+21,Fixed Threshold (0.50),OSF,0.9166666666666666
+21,No Class Balancing,OSF,0.96
+21,Fixed Model (XGBoost),OSF,0.9166666666666666
+21,Full Aegis,RNF,0.0
+21,No Engineered Features,RNF,0.0
+21,Fixed Threshold (0.50),RNF,0.0
+21,No Class Balancing,RNF,0.0
+21,Fixed Model (XGBoost),RNF,0.0
+99,Full Aegis,Machine failure,0.8541666666666666
+99,No Engineered Features,Machine failure,0.6666666666666666
+99,Fixed Threshold (0.50),Machine failure,0.845360824742268
+99,No Class Balancing,Machine failure,0.8541666666666666
+99,Fixed Model (XGBoost),Machine failure,0.7959183673469388
+99,Full Aegis,TWF,0.0
+99,No Engineered Features,TWF,0.15384615384615385
+99,Fixed Threshold (0.50),TWF,0.0
+99,No Class Balancing,TWF,0.12121212121212122
+99,Fixed Model (XGBoost),TWF,0.10810810810810811
+99,Full Aegis,HDF,1.0
+99,No Engineered Features,HDF,0.9032258064516129
+99,Fixed Threshold (0.50),HDF,1.0
+99,No Class Balancing,HDF,0.9032258064516129
+99,Fixed Model (XGBoost),HDF,0.875
+99,Full Aegis,PWF,0.96
+99,No Engineered Features,PWF,0.8
+99,Fixed Threshold (0.50),PWF,0.9565217391304348
+99,No Class Balancing,PWF,0.96
+99,Fixed Model (XGBoost),PWF,0.9230769230769231
+99,Full Aegis,OSF,1.0
+99,No Engineered Features,OSF,0.8
+99,Fixed Threshold (0.50),OSF,1.0
+99,No Class Balancing,OSF,1.0
+99,Fixed Model (XGBoost),OSF,0.9714285714285714
+99,Full Aegis,RNF,0.0
+99,No Engineered Features,RNF,0.0
+99,Fixed Threshold (0.50),RNF,0.0
+99,No Class Balancing,RNF,0.0
+99,Fixed Model (XGBoost),RNF,0.0
+123,Full Aegis,Machine failure,0.8571428571428571
+123,No Engineered Features,Machine failure,0.72
+123,Fixed Threshold (0.50),Machine failure,0.8571428571428571
+123,No Class Balancing,Machine failure,0.8865979381443299
+123,Fixed Model (XGBoost),Machine failure,0.8235294117647058
+123,Full Aegis,TWF,0.10526315789473684
+123,No Engineered Features,TWF,0.0
+123,Fixed Threshold (0.50),TWF,0.15384615384615385
+123,No Class Balancing,TWF,0.06060606060606061
+123,Fixed Model (XGBoost),TWF,0.13953488372093023
+123,Full Aegis,HDF,1.0
+123,No Engineered Features,HDF,1.0
+123,Fixed Threshold (0.50),HDF,1.0
+123,No Class Balancing,HDF,0.8888888888888888
+123,Fixed Model (XGBoost),HDF,0.8666666666666667
+123,Full Aegis,PWF,0.9655172413793104
+123,No Engineered Features,PWF,0.6896551724137931
+123,Fixed Threshold (0.50),PWF,0.9629629629629629
+123,No Class Balancing,PWF,1.0
+123,Fixed Model (XGBoost),PWF,0.8235294117647058
+123,Full Aegis,OSF,0.9767441860465116
+123,No Engineered Features,OSF,0.9523809523809523
+123,Fixed Threshold (0.50),OSF,0.9767441860465116
+123,No Class Balancing,OSF,0.9767441860465116
+123,Fixed Model (XGBoost),OSF,0.9545454545454546
+123,Full Aegis,RNF,0.0
+123,No Engineered Features,RNF,0.0
+123,Fixed Threshold (0.50),RNF,0.0
+123,No Class Balancing,RNF,0.0
+123,Fixed Model (XGBoost),RNF,0.009950248756218905

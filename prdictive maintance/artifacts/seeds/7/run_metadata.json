@@ -1,0 +1,135 @@
+{
+  "dataset": "C:\\Users\\csahi\\Downloads\\prdictive maintance\\prdictive maintance\\ai4i2020.csv",
+  "random_state": 7,
+  "data_quality": {
+    "rows_before_deduplication": 10000,
+    "rows_after_deduplication": 10000,
+    "duplicates_removed": 0,
+    "missing_sensor_values": 0
+  },
+  "split_percentages": {
+    "train": 70,
+    "validation": 15,
+    "test": 15
+  },
+  "split_summary": {
+    "train": {
+      "rows": 7000,
+      "targets": {
+        "Machine failure": {
+          "positive": 237,
+          "negative": 6763
+        },
+        "TWF": {
+          "positive": 29,
+          "negative": 6971
+        },
+        "HDF": {
+          "positive": 83,
+          "negative": 6917
+        },
+        "PWF": {
+          "positive": 68,
+          "negative": 6932
+        },
+        "OSF": {
+          "positive": 60,
+          "negative": 6940
+        },
+        "RNF": {
+          "positive": 10,
+          "negative": 6990
+        }
+      }
+    },
+    "validation": {
+      "rows": 1500,
+      "targets": {
+        "Machine failure": {
+          "positive": 51,
+          "negative": 1449
+        },
+        "TWF": {
+          "positive": 11,
+          "negative": 1489
+        },
+        "HDF": {
+          "positive": 16,
+          "negative": 1484
+        },
+        "PWF": {
+          "positive": 13,
+          "negative": 1487
+        },
+        "OSF": {
+          "positive": 19,
+          "negative": 1481
+        },
+        "RNF": {
+          "positive": 5,
+          "negative": 1495
+        }
+      }
+    },
+    "test": {
+      "rows": 1500,
+      "targets": {
+        "Machine failure": {
+          "positive": 51,
+          "negative": 1449
+        },
+        "TWF": {
+          "positive": 6,
+          "negative": 1494
+        },
+        "HDF": {
+          "positive": 16,
+          "negative": 1484
+        },
+        "PWF": {
+          "positive": 14,
+          "negative": 1486
+        },
+        "OSF": {
+          "positive": 19,
+          "negative": 1481
+        },
+        "RNF": {
+          "positive": 4,
+          "negative": 1496
+        }
+      }
+    }
+  },
+  "features": [
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]",
+    "Temperature difference [K]",
+    "Mechanical power [W]",
+    "Torque-wear interaction",
+    "Type"
+  ],
+  "targets": [
+    "Machine failure",
+    "TWF",
+    "HDF",
+    "PWF",
+    "OSF",
+    "RNF"
+  ],
+  "models_compared": [
+    "RandomForest",
+    "ExtraTrees",
+    "XGBoost",
+    "LightGBM",
+    "CatBoost",
+    "HistGradientBoosting",
+    "MLP"
+  ],
+  "threshold_selection": "Maximum validation F1; ties favor recall then the lower threshold.",
+  "test_set_used_for_model_selection": false,
+  "warning": "AI4I 2020 is synthetic. RNF has very few positive examples, so its metrics can vary substantially."
+}
